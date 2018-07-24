@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Pingat extends Migration
+class Calon extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,16 @@ class Pingat extends Migration
      * @return void
      */
     public function up()
-    {   //Create table Pingat
-        Schema::create ('pingat', function (Blueprint $table) {
+    {
+            Schema::create ('calon', function (Blueprint $table) {
 
             $table -> increments('id');
             $table -> string('name');
-            $table -> timestamps();
+            $table -> string('ic', 12) -> unique();
+            $table -> string('email', 50) -> unique();
             $table -> softDeletes();
+            $table -> timestamps();
+            
         });
     }
 

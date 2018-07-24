@@ -13,7 +13,15 @@ class Sesi extends Migration
      */
     public function up()
     {
-        //
+        //Create table Sesi
+        Schema::create ('sesi', function (Blueprint $table) {
+
+            $table -> increments('id');
+            $table -> date('start');
+            $table -> date('end');
+            $table -> timestamps();
+            $table -> softDeletes();
+        });
     }
 
     /**
