@@ -1,12 +1,12 @@
 
-@extends('frontend.layout')
+@extends('backend.layout')
 @section('content')
 
 
     <!-- Page Content -->
     <section class="py-5">
       <div class="container">
-          <h2>Register New User</h2><br/>
+          <h2>Tambah Sesi</h2><br/>
 
           @include ('common.alert')
           @include ('common.form_error')
