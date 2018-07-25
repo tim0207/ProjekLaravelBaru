@@ -23,4 +23,5 @@ Route::get('/', 'PortalController@home') -> name('home');
 Route::get('/user', 'UserController@index');
 Route::get('/user/login', 'UserController@login') -> name ('user.login');//naming the user controller;
 Route::get('/user/register', 'UserController@register') -> name('user.register');
+Route::post('/user/registerPost', 'UserController@registerPost') -> name('user.register.post');//post form
 

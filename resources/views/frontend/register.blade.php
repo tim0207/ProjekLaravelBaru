@@ -3,34 +3,44 @@
 
 @section('content')
 
-<header><h2 class="col-sm-10">Register New User</h2></header>
+
     <!-- Page Content -->
     <section class="py-5">
       <div class="container">
-       <form>
+          <h2>Register New User</h2><br/>
+
+          @include ('common.alert')
+          @include ('common.form_error')
+
+
+       <form method="POST" action="{{ route('user.register.post') }}">
+        @csrf
          <div class="form-group row">
           
            <label for="inputName" class="col-sm-2 col-form-label">Name</label>
            <div class="col-sm-10">
-             <input name="register_name" type="name" class="form-control" id="Registername" placeholder="Name">
+             <input name="name" type="name" class="form-control" id="name" placeholder="Name" 
+              value="{{ old('name')}}">
            </div>
          </div>
          <div class="form-group row">
-           <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+           <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
            <div class="col-sm-10">
-             <input name="register_email" type="email" class="form-control" id="RegisterEmail" placeholder="Email">
+             <input name="email" type="email" class="form-control" id="email" placeholder="Email"
+              value="{{ old('email')}}">
            </div>
          </div>
            <div class="form-group row">
            <label for="inputICNo" class="col-sm-2 col-form-label">IC No</label>
            <div class="col-sm-10">
-             <input name="register_icno" type="icno" class="form-control" id="RegisterICNo" placeholder="IC No without dash (-)">
+             <input name="ic" type="ic" class="form-control" id="ic" placeholder="IC No without dash (-)" 
+             value="{{ old('ic')}}">
            </div>
          </div>
           <div class="form-group row">
            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
            <div class="col-sm-10">
-             <input name="register_password" type="password" class="form-control" id="RegisterPassword" placeholder="Password">
+             <input name="password" type="password" class="form-control" id="password" placeholder="Password">
            </div>
          </div>
          <div class="form-group row">
